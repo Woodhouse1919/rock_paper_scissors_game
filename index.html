@@ -71,6 +71,9 @@
 
         function game() {
             playRound();
+            if (rounds === 5) {
+                console.log('Game Over! Your Score: ' + playerScore + ', Computer Score: ' + computerScore);
+            }
         }
         
         game();
