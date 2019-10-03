@@ -72,8 +72,23 @@
         function game() {
             playRound();
             if (rounds === 5) {
-                console.log('Game Over! Your Score: ' + playerScore + ', Computer Score: ' + computerScore);
-            }
+                if (playerScore > computerScore) {
+                    console.log('Game Over, You Win! Your Score: ' + playerScore + ', Computer Score: ' + computerScore);
+                    rounds = 0;
+                    playerScore = 0;
+                    computerScore = 0;
+                } else if (playerScore < computerScore) {
+                    console.log('Game Over, You Lose! Your Score: ' + playerScore + ', Computer Score: ' + computerScore);
+                    rounds = 0;
+                    playerScore = 0;
+                    computerScore = 0;
+                } else {
+                    console.log('Game Over, Draw! Your Score: ' + playerScore + ', Computer Score: ' + computerScore);
+                    rounds = 0;
+                    playerScore = 0;
+                    computerScore = 0;
+                }
+            } 
         }
         
         game();
