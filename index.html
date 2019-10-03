@@ -8,7 +8,13 @@
 </head>
 <body>
     <script>
-        // this generates the computers move
+        let playerScore = 0;
+        let computerScore = 0;
+        let rounds = 0;
+        
+        game();
+        
+         // this generates the computers move
         function computerPlay() {
             let result = Math.floor(Math.random() * 3);
             if (result == 1) {
@@ -19,8 +25,83 @@
                 return 'scissors';
             }          
         }
+        
+        
+        function playRound() {
+            let computerSelection = computerPlay();
+            let playerSelection = prompt('Rock, Paper, Scissors?').toLowerCase();
+            
+            if (playerSelection === computerSelection) {
+                return console.log('Draw!');
+
+            } else if (computerSelection == 'rock' && playerSelection == 'scissors') {
+                rounds++;
+                computerScore++;
+                return console.log('Rock beats Scissors, Computers Score: ' + computerScore + ', Round ' + rounds + ' of 5');
+                
+            } else if (computerSelection == 'rock' && playerSelection == 'paper') {
+                rounds++;
+                playerScore++;
+                return console.log('Paper Beats Rock, Your Score: ' + playerScore + ', Round ' + rounds + ' of 5');
+                
+            } else if (computerSelection == 'paper' && playerSelection == 'scissors') {
+                rounds++;
+                playerScore++;
+                return console.log('Scissors beats Paper, Your Score: ' + playerScore + ', Round ' + rounds + ' of 5');
+                
+            } else if (computerSelection == 'paper' && playerSelection == 'rock') {
+                rounds++;
+                computerScore++;
+                return console.log('Paper beats Rock, Computers Score: ' + computerScore + ', Round ' + rounds + ' of 5');
+                
+            } else if (computerSelection == 'scissors' && playerSelection == 'paper') {
+                rounds++;
+                computerScore++;
+                return console.log('Scissors beats Paper, Computers Score: ' + computerScore + ', Round ' + rounds + ' of 5');
+                
+            } else if (computerSelection == 'scissors' && playerSelection == 'rock') {
+                rounds++;
+                playerScore++;
+                return console.log('Rock beats Scissors, Your Score: ' + playerScore + ', Round ' + rounds + ' of 5');
+                
+            } else {
+                return console.log('Oops! Something went wrong, try again.');
+            }
+        }
 
 
+
+
+
+
+        function game() {
+            
+             } if (playerScore === 3) {
+                console.log('You Win!')
+                rounds = 0;
+                playerScore = 0;
+                computerScore = 0;
+            } else if (computerScore === 3) {
+                console.log('You Lose!');
+                rounds = 0;
+                playerScore = 0;
+                computerScore = 0;
+            } 
+
+             
+            
+        
+        
+             
+
+    
+        
+
+           
+
+           
+        
+            
     </script>
 
 </body>
