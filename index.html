@@ -12,7 +12,7 @@
         let computerScore = 0;
         let rounds = 0;
         
-        game();
+       
         
          // this generates the computers move
         function computerPlay() {
@@ -75,8 +75,8 @@
 
 
         function game() {
-            
-             } if (playerScore === 3) {
+            playRound();
+            } if (playerScore === 3) {
                 console.log('You Win!')
                 rounds = 0;
                 playerScore = 0;
@@ -86,10 +86,16 @@
                 rounds = 0;
                 playerScore = 0;
                 computerScore = 0;
-            } 
-
+            } else {
+                playRound();
+            }
+        
+         game();
              
-            
+    </script>
+
+</body>
+</html>
         
         
              
@@ -102,7 +108,3 @@
            
         
             
-    </script>
-
-</body>
-</html>
