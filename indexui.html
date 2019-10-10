@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<div class="game">
+    <h1 class="title">Rock Paper Scissors Game</h1>
+        <div class="announcement">
+        <h2>First to 5 wins!</h2>
+        
+        </div>
+    <div class="buttons">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+    
+    <div class="results">
+    </div>
+
+    <div class="score">
+        <p class="yourScore"> Your Score is 0 </p>
+        <p class="comScore"> Computer Score is 0 </p>
+    </div>
+    
+    <div class="rounds">
+        
+</div> 
+        
+        
+   
+<script>
+        const result = document.querySelector('.results');
+        const button = document.querySelectorAll('button');
+        const yourScore = document.querySelector('.yourScore');
+        const comScore = document.querySelector('.comScore');
+        const announcementText = document.querySelector('h2');
+        const announcement = document.querySelector('.announcement');
+
+        let playerScore = 0;
+        let computerScore = 0;
+        let playerSelection;
+        let computerSelection;
+    
+    button.forEach((button) => {
+        button.addEventListener('click', () => {
+        playerSelection = button.id;
+        computerSelection = computerPlay();
+        console.log(playerSelection); 
+
+        if (!isGameOver()) {
+            startRound();
+        }
+        }); 
+    });
+            
+    
+    function isGameOver() {
+        return playerScore === 5 || computerScore === 5
+    }
+                
+    function reset() {
+        let playAgainBtn = document.createElement('button');
+        playAgainBtn.innerHTML = 'Play Again?';
+        announcement.appendChild(playAgainBtn);
+        }
+            
+    function startRound() {
+        playRound();
+
+        if (isGameOver()) {
+            winner();
+        }
+    } 
+            
+    function winner() {
+        if (playerScore > computerScore) {
+            announcementText.textContent = 'Game over, you won!';
+            reset();
+        } else if (playerScore < computerScore) {
+            announcementText.textContent = 'Game over, you lost!';
+            reset();
+        }
+    }     
+
+    function computerPlay() {
+        let result = Math.floor(Math.random() * 3);
+        
+        if (result == 1) {
+            return 'rock'
+        } else if (result == 2) {
+            return 'paper'
+        } else {
+            return 'scissors';
+        }          
+    }
+        
+    function playRound() {
+        console.log(playerScore);
+        console.log(computerScore);
+
+        if (playerSelection === computerSelection) {
+            result.textContent = 'Draw!';
+
+        } else if (computerSelection == 'rock' && playerSelection == 'scissors') {
+            computerScore++;
+            result.textContent = 'Rock beats Scissors, you lost!';
+            comScore.textContent = 'Computer Score is ' + computerScore;
+
+        } else if (computerSelection == 'rock' && playerSelection == 'paper') {
+            playerScore++;
+            result.textContent = 'Paper beats Rock, you won!';
+            yourScore.textContent = 'Your Score is ' + playerScore;
+
+        } else if (computerSelection == 'paper' && playerSelection == 'scissors') {
+            playerScore++;
+            result.textContent = 'Scissors beats Paper, you won!';
+            yourScore.textContent = 'Your Score is ' + playerScore;
+
+        } else if (computerSelection == 'paper' && playerSelection == 'rock') {
+            computerScore++;
+            result.textContent = 'Paper beats Rock, you lost!';
+            comScore.textContent = 'Computer Score is ' + computerScore;
+
+        } else if (computerSelection == 'scissors' && playerSelection == 'paper') {
+            computerScore++;
+            result.textContent = 'Scissors beats Paper, you lost!';
+            comScore.textContent = 'Computer Score is ' + computerScore;
+
+        } else if (computerSelection == 'scissors' && playerSelection == 'rock') {
+            playerScore++;
+            result.textContent = 'Rock beats Scissors, you won!'
+            yourScore.textContent = 'Your Score is ' + playerScore;
+        } 
+    }  
+
+    </script>
+</body>
+</html>
+    
+    
+        
+    
+            
+            
+        
+        
+
+        
+
+            
+       
+        
+            
+
+       
+         
+
+       
+        
+
+        
+        
+  
+       
+        
+        
+
+
+
+
+
+
+        
+
+       
+
+
+            
+            
+        
+
+
+        
+        
+
+        
+        
+ 
+        
+        
+
+        
+        
+
+
+
+
+
+             
+
+    
+        
+
+           
+
+           
+        
+            
