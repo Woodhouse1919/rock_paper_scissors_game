@@ -1,0 +1,73 @@
+body {
+    background-color: darksalmon;
+    font-family: Futura, Trebuchet MS, Arial, sans-serif;
+}
+
+
+.game {
+    position: relative;
+    
+    text-align: center;
+}
+   
+
+.title {
+    font-size: 70px;
+    margin: 100px 50px 40px 50px;
+}   
+
+.announcement {
+    font-size: 20px;
+    margin-bottom:  75px;
+}
+
+.announcement button {
+    position: absolute;
+    left: 658px;
+    margin: 10px 10px;
+}
+
+.results {
+    font-size: 30px;
+    margin: 20px 10px;
+}
+
+.buttons {
+    margin: 50px 100px 20px 100px;
+}
+
+
+
+.buttons button {
+    width: auto;
+    padding: 20px;
+    background-color: lightblue;
+    font-weight: 600;
+    border-radius: 7px;
+    font-size: 30px;
+    
+}
+
+#paper {
+    position: relative;
+    left: 30px;
+    margin-left: 80px;
+    margin-right: 100px;
+}
+
+#rock {
+    position: relative;
+    left: 20px;
+}
+
+#scissors {
+    position: relative;
+    left: 18px;
+}
+
+.score p {
+    display: flex;
+    justify-content: center;
+    justify-items: space-between;
+}
+
